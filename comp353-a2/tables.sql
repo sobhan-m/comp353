@@ -74,7 +74,7 @@ CREATE TABLE Employees
 	eID INT AUTO_INCREMENT,
 	firstName VARCHAR(100),
 	lastName VARCHAR(100),
-	dateOfBirth VARCHAR(100),
+	dateOfBirth DATE,
 	phoneNumber VARCHAR(100),
 	emailAddress VARCHAR(100),
 	startDate DATE,
