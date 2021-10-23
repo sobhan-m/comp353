@@ -4,7 +4,8 @@ Query A
 =================================
 */
 
-SELECT b.bID, b.country, b.name, CONCAT(m.firstName, " ", m.lastName) generalManager, b.yearlyBudget, COUNT(DISTINCT d.dID) departmentCount, COUNT(DISTINCT e.eID) employeeCount, COUNT(DISTINCT p.pID) projectCount FROM Branches b 
+SELECT b.bID, b.country, b.name, CONCAT(m.firstName, " ", m.lastName) generalManager, b.yearlyBudget, 
+	COUNT(DISTINCT d.dID) departmentCount, COUNT(DISTINCT e.eID) employeeCount, COUNT(DISTINCT p.pID) projectCount FROM Branches b 
 	LEFT JOIN GeneralManagement gm ON b.bID = gm.bID
 	LEFT JOIN Employees m ON gm.managerID = m.eID
 	LEFT JOIN Departments d ON b.bID = d.bID
@@ -20,7 +21,8 @@ Query B
 =================================
 */
 
-SELECT b.country, b.name branchName, p.name projectName, CONCAT(m.firstName, " ", m.lastName) projectManager, p.startDate, a.assignedDate, a.numberOfHours, a.hourlyWage FROM Employees e
+SELECT b.country, b.name branchName, p.name projectName, CONCAT(m.firstName, " ", m.lastName) projectManager, 
+	p.startDate, a.assignedDate, a.numberOfHours, a.hourlyWage FROM Employees e
 	INNER JOIN EmployeeDepartments ed ON e.eID = ed.eID
 	INNER JOIN Departments d ON ed.dID = d.dID
 	INNER JOIN Branches b ON d.bID = b.bID
@@ -37,7 +39,8 @@ Query C
 =================================
 */
 
-SELECT e.eID, e.firstName, e.lastName, e.phoneNumber, d.name departmentName, m.firstName managerFirstName, m.lastName managerLastName, e.startDate, e.hourlyWage, COUNT(a.pID) numberOfProjects FROM Employees e
+SELECT e.eID, e.firstName, e.lastName, e.phoneNumber, d.name departmentName, 
+	m.firstName managerFirstName, m.lastName managerLastName, e.startDate, e.hourlyWage, COUNT(a.pID) numberOfProjects FROM Employees e
 	INNER JOIN EmployeeDepartments ed ON e.eID = ed.eID
 	INNER JOIN Departments d ON ed.dID = d.dID
 	INNER JOIN Branches b ON d.bID = b.bID
@@ -68,7 +71,8 @@ Query E
 =================================
 */
 
-SELECT e.eID, e.firstName, e.lastName, e.phoneNumber, COUNT(a.pID) numOfProjects, SUM(a.numberOfHours) hoursInProjects FROM Employees e 
+SELECT e.eID, e.firstName, e.lastName, e.phoneNumber, COUNT(a.pID) numOfProjects, 
+	SUM(a.numberOfHours) hoursInProjects FROM Employees e 
 	INNER JOIN EmployeeDepartments ed ON e.eID = ed.eID
 	INNER JOIN Departments d ON ed.dID = d.dID
 	INNER JOIN Branches b ON d.bID = b.bID
