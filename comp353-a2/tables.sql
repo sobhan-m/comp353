@@ -38,7 +38,7 @@ CREATE TABLE Departments
 	yearlyBudget INT,
 	bID INT,
 	PRIMARY KEY (dID),
-	FOREIGN KEY bID REFERENCES Branches(bID)
+	FOREIGN KEY (bID) REFERENCES Branches(bID)
 );
 
 /*
@@ -58,7 +58,7 @@ CREATE TABLE Projects
 	endDate DATE,
 	dID INT,
 	PRIMARY KEY (pID),
-	FOREIGN KEY dID REFERENCES Departments(dID)
+	FOREIGN KEY (dID) REFERENCES Departments(dID)
 );
 
 /*
@@ -67,7 +67,7 @@ Employees
 =================================
 */
 
-DROP IF EXISTS TABLE Employees;
+DROP TABLE IF EXISTS Employees;
 
 CREATE TABLE Employees
 (
@@ -185,6 +185,7 @@ CREATE TABLE Assignments
 	pID INT,
 	hourlyWage FLOAT,
 	numberOfHours INT,
+    assignedDate DATE,
 	PRIMARY KEY (eID, pID),
 	FOREIGN KEY (eID) REFERENCES Employees(eID),
 	FOREIGN KEY (pID) REFERENCES Projects(pID)

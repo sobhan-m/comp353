@@ -16,5 +16,5 @@ Here is the relational schema for the different relations in this database.
 - ProjectManagement(<ins>pID</ins> -> Projects(pID), managerID -> Managers(eID))
 - EmployeeManagement(<ins>eID</ins> -> Employees(eID), managerID -> Managers(eID))
 - EmployeeDepartments(<ins>eID</ins> -> Employees(eID), dID -> Departments(dID))
-- Assignments(<ins>eID</ins> -> Employees(eID), <ins>pID</ins> -> Projects(pID), hourlyWage, numberOfHours)
+- Assignments(<ins>eID</ins> -> Employees(eID), <ins>pID</ins> -> Projects(pID), hourlyWage, numberOfHours, assignedDate)
 

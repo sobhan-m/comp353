@@ -6,7 +6,7 @@ Branches
 
 INSERT INTO Branches 
 	(name, yearlyBudget, address, city, postalCode, province, country) VALUES 
-	("Alpha", 1111111, "1 Street", "Montreal", "A1A1A1", "QC", "Canada"),
+	("Alpha", 1111111, "1 Street", "Montreal", "A1A1A1", "QC", "Canada"), -- This is the headquarters.
 	("Beta", 2222222, "2 Street", "Laval", "B2B2B2", "QC", "Canada"),
 	("Charlie", 3333333, "3 Street", "Montreal", "C3C3C3", "QC", "Canada"),
 	("Delta", 4444444, "4 Street", "Cote-Saint-Luc", "D4D4D4", "QC", "Canada"),
@@ -43,8 +43,8 @@ Projects
 
 INSERT INTO Projects
 	(name, budget, startDate, endDate, dID) VALUES
-	("A", 1111, "2001-01-01", "2006-01-01", 1),
-	("B", 2222, "2002-01-01", "2004-01-01", 1),
+	("A", 11111, "2001-01-01", "2006-01-01", 1),
+	("B", 22222, "2002-01-01", "2004-01-01", 1),
 	("C", 3333, "2003-01-01", "2007-01-01", 2),
 	("D", 4444, "2004-01-01", "2008-01-01", 3),
 	("E", 5555, "2005-01-01", NULL, 5),
@@ -69,7 +69,7 @@ Employees
 INSERT INTO Employees
 	(firstName, lastName, dateOfBirth, phoneNumber, emailAddress, startDate, 
 	endDate, hourlyWage, address, city, postalCode, province,country) VALUES
-	("Alex", "Andrew", "1991-01-01", "11111", "a.a@a.com", "2011-01-01",
+	("Alfred", "McDonald", "1991-01-01", "11111", "a.a@a.com", "2011-01-01",
 	"2020-01-01", 20.1, "1 Street", "Montreal", "A1A1A1", "QC", "Canada"),
 	("Bertrand", "Bruce", "1992-01-01", "22222", "b.b@b.com", "2000-01-01",
 	NULL, 20.2, "2 Street", "Laval", "B2B2B2", "QC", "Canada"),
@@ -210,22 +210,26 @@ Assignments
 */
 
 INSERT INTO Assignments
-	(eID, pID, hourlyWage, numberOfHours) VALUES
-	(1, 1, 11, 1),
-	(2, 1, 12, 2),
-	(3, 2, 13, 3),
-	(4, 3, 14, 4),
-	(5, 4, 15, 5),
-	(6, 5, 16, 6),
-	(7, 6, 17, 7),
-	(8, 7, 18, 8),
-	(9, 8, 19, 9),
-	(10, 9, 20, 10),
-	(11, 10, 21, 11),
-	(12, 11, 22, 12),
-	(13, 12, 23, 13),
-	(14, 13, 24, 14),
-	(15, 14, 25, 15),
-	(16, 15, 26, 16),
-	(17, 16, 27, 17),
-	(18, 3, 28, 18);
+	(eID, pID, hourlyWage, numberOfHours, assignedDate) VALUES
+	(1, 1, 11, 1, "2005-01-01"),
+    (1, 2, 12, 3, "2006-01-01"),
+	(1, 3, 13, 2, "2003-01-01"),
+    (1, 4, 14, 4, "2004-01-01"),
+	(1, 5, 15, 1, "2011-01-01"),
+    (1, 6, 16, 1, "2010-01-01"),
+	(2, 1, 12, 2, "2006-01-01"),
+	(3, 2, 13, 3, "2005-01-01"),
+	(5, 4, 15, 5, "2004-01-01"),
+	(6, 5, 16, 6, "2002-01-01"),
+	(7, 6, 17, 7, "2009-01-01"),
+	(8, 7, 18, 8, "2015-01-01"),
+	(9, 8, 19, 9, "2014-01-01"),
+	(10, 9, 20, 10, "2005-01-01"),
+	(11, 10, 21, 11, "2004-01-01"),
+	(12, 11, 22, 12, "2001-01-01"),
+	(13, 12, 23, 13, "2009-01-01"),
+	(14, 13, 24, 14, "2007-01-01"),
+	(15, 14, 25, 15, "2008-01-01"),
+	(16, 15, 26, 16, "2011-01-01"),
+	(17, 16, 27, 17, "2013-01-01"),
+    (17, 12, 12, 12, "2012-01-01");
